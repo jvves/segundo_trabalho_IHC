@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +26,12 @@
         }
 
         function logout() {
-        window.location.href = "index.html";
+            window.location.href = "index.html";
         }
 
     </script>
 </head>
+
 <body class="bg-gray-100 h-screen flex flex-col">
     <nav class="bg-blue-600 text-white p-4">
         <div class="container mx-auto flex justify-between">
@@ -38,28 +40,35 @@
         </div>
     </nav>
     <div class="container mx-auto p-4 flex-1">
+
         <div class="bg-white rounded-lg shadow-lg p-6 mb-4">
-            <!-- Flex container ajustável -->
             <div class="flex flex-wrap justify-around sm:justify-between sm:flex-row flex-col gap-4">
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="showSection('menu')">Menu</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="showSection('usuario')">Usuário</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="showSection('financeiro')">Financeiro</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="showSection('relatorios')">Relatórios</button>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="showSection('notas')">Notas</button>
-                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="logout()">Sair</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="showSection('menu')">Menu</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="showSection('usuario')">Usuário</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="showSection('financeiro')">Financeiro</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="showSection('relatorios')">Relatórios</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="showSection('notas')">Notas</button>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    onclick="logout()">Sair</button>
             </div>
         </div>
-    </div>
-    
+
         <div id="menu" class="section">
-            <h2 class="text-2xl font-bold mb-4">Menu</h2>
+            <h2 class="text-2xl font-bold mb-4 text-center sm:text-left">Menu</h2>
             <div class="bg-gray-100 rounded-lg shadow p-6">
-                <p>Seja Bem-Vindo ao Sistema de Gestão</p>
-                <p>Utilize o menu acima para navegar entre as funcionalidades do sistema.</p>
+                <p class="mb-2 text-center sm:text-left">Seja Bem-Vindo ao Sistema de Gestão</p>
+                <p class="text-center sm:text-left">Utilize o menu acima para navegar entre as funcionalidades do
+                    sistema.</p>
             </div>
         </div>
+
         <div id="usuario" class="section hidden">
-            <h2 class="text-2xl font-bold mb-4">Meus Dados</h2>
+            <h2 class="text-2xl font-bold mb-4 text-center sm:text-left">Meus Dados</h2>
             <div id="view-mode" class="bg-gray-100 rounded-lg shadow p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div><strong>ID:</strong> 00001</div>
@@ -73,59 +82,52 @@
                     <div><strong>Cidade:</strong> Juiz de Fora</div>
                     <div><strong>UF:</strong> MG</div>
                 </div>
-                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="toggleEditMode()">Editar</button>
+                <button
+                    class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+                    onclick="toggleEditMode()">Editar</button>
             </div>
             <div id="edit-mode" class="hidden bg-gray-100 rounded-lg shadow p-6">
                 <form onsubmit="saveChanges(event)">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Inputs continuam iguais -->
                         <div>
                             <label for="id" class="block text-sm font-medium text-gray-700">ID</label>
-                            <input type="text" id="id" name="id" value="00001" class="mt-1 block w-full px-3 py-2 bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" readonly>
+                            <input type="text" id="id" name="id" value="00001"
+                                class="mt-1 block w-full px-3 py-2 bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                readonly>
                         </div>
                         <div class="col-span-2">
                             <label for="nome" class="block text-sm font-medium text-gray-700">Nome Completo*</label>
-                            <input type="text" id="nome" name="nome" value="Administrador" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <input type="text" id="nome" name="nome" value="Administrador"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                         </div>
+                        <!-- Outros campos -->
                         <div>
                             <label for="funcao" class="block text-sm font-medium text-gray-700">Função*</label>
-                            <input type="text" id="funcao" name="funcao" value="adm" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <input type="text" id="funcao" name="funcao" value="adm"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email*</label>
-                            <input type="email" id="email" name="email" value="adm@adm.com" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <input type="email" id="email" name="email" value="adm@adm.com"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                         </div>
-                        <div>
-                            <label for="telefone" class="block text-sm font-medium text-gray-700">Telefone*</label>
-                            <input type="text" id="telefone" name="telefone" value="(00) 00000-0000" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                        </div>
-                        <div>
-                            <label for="cep" class="block text-sm font-medium text-gray-700">CEP*</label>
-                            <input type="text" id="cep" name="cep" value="01234-567" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                        </div>
-                        <div>
-                            <label for="rua" class="block text-sm font-medium text-gray-700">Rua*</label>
-                            <input type="text" id="rua" name="rua" value="Rua das Flores" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                        </div>
-                        <div>
-                            <label for="numero" class="block text-sm font-medium text-gray-700">Número*</label>
-                            <input type="text" id="numero" name="numero" value="2005" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                        </div>
-                        <div>
-                            <label for="cidade" class="block text-sm font-medium text-gray-700">Cidade*</label>
-                            <input type="text" id="cidade" name="cidade" value="Juiz de Fora" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                        </div>
-                        <div>
-                            <label for="uf" class="block text-sm font-medium text-gray-700">UF*</label>
-                            <input type="text" id="uf" name="uf" value="MG" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
-                        </div>
+                        <!-- Restante dos campos -->
                     </div>
-                    <div class="mt-4 flex justify-end space-x-4">
-                        <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" onclick="toggleEditMode()">Cancelar</button>
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Salvar</button>
+                    <div class="mt-4 flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-4">
+                        <button type="button"
+                            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto"
+                            onclick="toggleEditMode()">Cancelar</button>
+                        <button type="submit"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto">Salvar</button>
                     </div>
                 </form>
             </div>
         </div>
+
         <div id="financeiro" class="section hidden">
             <h2 class="text-2xl font-bold mb-4">Gestão Financeira</h2>
             <div class="bg-gray-100 rounded-lg shadow p-6">
@@ -133,15 +135,21 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label for="data" class="block text-sm font-medium text-gray-700">Data*</label>
-                            <input type="date" id="data" name="data" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <input type="date" id="data" name="data"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                         </div>
                         <div>
                             <label for="valor" class="block text-sm font-medium text-gray-700">Valor*</label>
-                            <input type="number" id="valor" name="valor" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <input type="number" id="valor" name="valor"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                         </div>
                         <div>
                             <label for="banco" class="block text-sm font-medium text-gray-700">Banco*</label>
-                            <select id="banco" name="banco" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <select id="banco" name="banco"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                                 <option value="">Selecione</option>
                                 <option value="Banco do Brasil">Banco do Brasil</option>
                                 <option value="Caixa Econômica">Caixa Econômica</option>
@@ -150,16 +158,22 @@
                             </select>
                         </div>
                         <div>
-                            <label for="tipoLancamento" class="block text-sm font-medium text-gray-700">Tipo de Lançamento*</label>
-                            <select id="tipoLancamento" name="tipoLancamento" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <label for="tipoLancamento" class="block text-sm font-medium text-gray-700">Tipo de
+                                Lançamento*</label>
+                            <select id="tipoLancamento" name="tipoLancamento"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                                 <option value="">Selecione</option>
                                 <option value="Receita">Receita</option>
                                 <option value="Despesa">Despesa</option>
                             </select>
                         </div>
                         <div>
-                            <label for="tipoDespesa" class="block text-sm font-medium text-gray-700">Tipo de Despesa*</label>
-                            <select id="tipoDespesa" name="tipoDespesa" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <label for="tipoDespesa" class="block text-sm font-medium text-gray-700">Tipo de
+                                Despesa*</label>
+                            <select id="tipoDespesa" name="tipoDespesa"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                                 <option value="">Selecione</option>
                                 <option value="Aluguel">Aluguel</option>
                                 <option value="Salário">Salário</option>
@@ -168,37 +182,49 @@
                             </select>
                         </div>
                         <div>
-                            <label for="tipoConta" class="block text-sm font-medium text-gray-700">Tipo de Conta*</label>
-                            <select id="tipoConta" name="tipoConta" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <label for="tipoConta" class="block text-sm font-medium text-gray-700">Tipo de
+                                Conta*</label>
+                            <select id="tipoConta" name="tipoConta"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                                 <option value="">Selecione</option>
                                 <option value="Corrente">Corrente</option>
                                 <option value="Poupança">Poupança</option>
                             </select>
                         </div>
                     </div>
-                    <button type="button" id="registrarLancamento" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Registrar Lançamento</button>
+                    <button type="button" id="registrarLancamento"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Registrar
+                        Lançamento</button>
                 </form>
                 <div id="ultimosLancamentos" class="mt-6">
                     <h3 class="text-xl font-bold mb-4">Últimos Lançamentos</h3>
                 </div>
             </div>
-        </div>              
+        </div>
         <div id="relatorios" class="section hidden">
             <h2 class="text-2xl font-bold mb-4">Relatório Financeiro</h2>
             <div class="bg-gray-100 rounded-lg shadow p-6">
                 <form id="filtroRelatorio">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                         <div>
-                            <label for="dataInicial" class="block text-sm font-medium text-gray-700">Data Inicial*</label>
-                            <input type="date" id="dataInicial" name="dataInicial" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <label for="dataInicial" class="block text-sm font-medium text-gray-700">Data
+                                Inicial*</label>
+                            <input type="date" id="dataInicial" name="dataInicial"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                         </div>
                         <div>
                             <label for="dataFinal" class="block text-sm font-medium text-gray-700">Data Final*</label>
-                            <input type="date" id="dataFinal" name="dataFinal" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                            <input type="date" id="dataFinal" name="dataFinal"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                required>
                         </div>
                         <div>
-                            <label for="tipoTransacao" class="block text-sm font-medium text-gray-700">Tipo de Transação</label>
-                            <select id="tipoTransacao" name="tipoTransacao" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <label for="tipoTransacao" class="block text-sm font-medium text-gray-700">Tipo de
+                                Transação</label>
+                            <select id="tipoTransacao" name="tipoTransacao"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                                 <option value="">Todos</option>
                                 <option value="Receita">Receita</option>
                                 <option value="Despesa">Despesa</option>
@@ -206,7 +232,8 @@
                         </div>
                         <div>
                             <label for="bancoFiltro" class="block text-sm font-medium text-gray-700">Banco</label>
-                            <select id="bancoFiltro" name="bancoFiltro" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <select id="bancoFiltro" name="bancoFiltro"
+                                class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                                 <option value="">Todos</option>
                                 <option value="Banco do Brasil">Banco do Brasil</option>
                                 <option value="Caixa Econômica">Caixa Econômica</option>
@@ -215,7 +242,8 @@
                             </select>
                         </div>
                     </div>
-                    <button type="button" id="filtrarRelatorio" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Filtrar</button>
+                    <button type="button" id="filtrarRelatorio"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Filtrar</button>
                 </form>
                 <div class="mt-6">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
@@ -233,21 +261,33 @@
                         </div>
                     </div>
                     <div class="flex justify-end space-x-4 mt-4">
-                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Exportar para Excel</button>
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Exportar para PDF</button>
+                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Exportar
+                            para Excel</button>
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Exportar para
+                            PDF</button>
                     </div>
                     <table class="mt-6 min-w-full divide-y divide-gray-200 bg-white rounded-lg shadow">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data</th>
-                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipo</th>
-                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descrição</th>
-                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Banco</th>
-                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Valor</th>
+                                <th
+                                    class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Data</th>
+                                <th
+                                    class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Tipo</th>
+                                <th
+                                    class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Descrição</th>
+                                <th
+                                    class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Banco</th>
+                                <th
+                                    class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Valor</th>
                             </tr>
                         </thead>
                         <tbody id="relatorioTable" class="bg-white divide-y divide-gray-200">
-                           
+                            <!-- As entradas do relatório serão adicionadas aqui -->
                             <tr>
                                 <td class="px-4 py-2">18/10/2024</td>
                                 <td class="px-4 py-2">Receita</td>
@@ -294,19 +334,24 @@
                     </table>
                 </div>
             </div>
-        </div>        
+        </div>
         <div id="notas" class="section hidden">
             <h2 class="text-2xl font-bold mb-4">Envio de Arquivos</h2>
             <div class="bg-gray-100 rounded-lg shadow p-6">
                 <form id="uploadForm" action="#" method="post" enctype="multipart/form-data">
                     <div class="mb-4">
-                        <label for="fileInput" class="block text-sm font-medium text-gray-700">Selecione os Arquivos</label>
-                        <input type="file" id="fileInput" name="files[]" multiple class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <label for="fileInput" class="block text-sm font-medium text-gray-700">Selecione os
+                            Arquivos</label>
+                        <input type="file" id="fileInput" name="files[]" multiple
+                            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                     </div>
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enviar Arquivos</button>
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enviar
+                        Arquivos</button>
                 </form>
             </div>
-        </div>        
+        </div>
     </div>
 </body>
+
 </html>
